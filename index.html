@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +9,14 @@
 </head>
 
 <body>
-
-    <h1>Memory Game</h1>
-    <div class="container">
+<h1>Memory Game</h1>
+    
+    <div class="grid-container"></div>
+    <div class="buttons"></div>
+    <button onclick="restart()">restart</button>
+    <button onclick="playAgain()">play again</button>
+    
+      </div>
         <div class="card">
             <img class="back-card" src="card-background.jpeg" alt="back-card">
             <img class="front-card" src="ice-cream.jpeg" alt="ice-cream">
@@ -37,13 +41,9 @@
             <img class="back-card" src="card-background.jpeg" alt="back-card">
             <img class="front-card" src="tacos.jpeg" alt="taco">
         </div>
+        
 
-        <div class="container">
-            <canvas id="memoryBoard" width="1000" height="600">
-            </canvas>
-        </div>
-
-        <script src="script.js"></script>
+     <script src="script.js"></script>
         </section>
 </body>
 
