@@ -16,7 +16,14 @@ function flipCard() {
     secondCard = this;
     checkFlip = false;
   }
+/*
+  if(firstCard===secondCard)
+  lockcard=true;
 
+  firstCard.classList.remove('flip')
+  secondCard.classList.remove('flip')
+  lockcard=false;
+  */
 
 mycardsEl.forEach(card => card.addEventListener('click', flipCard));
 
