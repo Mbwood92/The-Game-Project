@@ -7,35 +7,36 @@ function flipCard() {
     if (cardLock) return;
     if (this === firstCard) return;
     this.classList.add('flip');
-    if (!isFlip){
+    if (!isFlip) {
         isFlip = true;
-      firstCard = this;
-      return;
+        firstCard = this;
+        return;
     }
     secondCard = this;
     isFlip = false;
 
     goodMatch();
-  }
-  function goodMatch() {
-    if (firstCard.dataset.food === secondCard.dataset.food) {
-      disableCards();
-      return;
+}
+function goodMatch() {
+    let isMatch = firstCard.dataset.food === secondCard.dataset.food
+    if (isMatch)
+        disableCards();
+    else {
+        unflipCards();
     }
- 
-    unflipCards();
-  }
- 
-  function disableCards() {
+
+}
+
+function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-  }
- 
-  function unflipCards() {
+}
+
+function unflipCards() {
     setTimeout(() => {
-      firstCard.classList.remove('flip');
-      secondCard.classList.remove('flip');
-    }, 1000);
-  }
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
+    }, 1500);
+}
 
 mycardsEl.forEach(card => card.addEventListener('click', flipCard));
